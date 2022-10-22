@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="css/styles.css" />
+		<script
+			src="https://kit.fontawesome.com/c27c855421.js"
+			crossorigin="anonymous"
+		></script>
+		<script defer src="js/main.js"></script>
+		<style>
+			@keyframes border {
+				0% {
+					outline-color: rgb(255, 255, 255);
+				}
+
+				100% {
+					outline-color: rgba(255, 255, 255, 0);
+				}
+			}
+
+			.attrbtn {
+				font-size: 1.5rem;
+				transition: 0.3s;
+				cursor: pointer;
+				color: white;
+			}
+
+			.attrbtn:hover {
+				transform: scale(1.1);
+			}
+
+			#att {
+				display: none;
+			}
+
+			#att:checked ~ .att-container {
+				visibility: visible;
+				max-width: 500px;
+				max-height: 50px;
+			}
+
+			#att:checked ~ .attrbtn {
+				transform: scaleX(-1);
+			}
+
+			.att-container {
+				transition: 0.3s;
+				visibility: hidden;
+				max-width: 0;
+				max-height: 0;
+				color: #59b4ff;
+
+				overflow: hidden;
+			}
+
+			.attribution {
+				animation: border 4s infinite alternate;
+				outline: 2px solid rgb(255, 255, 255);
+				overflow: hidden;
+				display: flex;
+				align-items: center;
+				transition: 0.3s;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.274);
+				border-radius: 10px;
+				padding: 5px;
+				background-color: #14253d;
+				margin: 1rem;
+				font-size: 12px;
+				font-family: sans-serif;
+				text-align: center;
+				letter-spacing: 2px;
+				z-index: 999999;
+			}
+
+			.attribution a {
+				position: relative;
+				display: inline-block;
+				transition: 0.3s;
+				color: #00fff7;
+				text-decoration: none;
+				font-weight: bold;
+			}
+
+			.attribution a::after {
+				transition: 0.3s;
+				content: ' ';
+				width: 0;
+				height: 2px;
+				background-color: rgb(255, 255, 255);
+				position: absolute;
+				inset: 0;
+				top: 17px;
+				left: 50%;
+			}
+
+			.attribution a:hover::after {
+				width: 100%;
+				transform: translateX(-50%);
+			}
+		</style>
+		<title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+	</head>
+	<body>
+		<main>
+			<header class="header">
+				<img src="images/logo.svg" alt="" class="header__logo" />
+				<input type="checkbox" name="menu" id="menu" />
+				<label for="menu">
+					<i class="fa-solid fa-bars"></i>
+					<i class="fa-solid fa-xmark"></i>
+				</label>
+
+				<nav class="header__nav">
+					<ul>
+						<li><a href="#">Features</a></li>
+						<li><a href="#">Pricing</a></li>
+						<li><a href="#">Resources</a></li>
+					</ul>
+					<hr />
+					<div class="header__login">
+						<a href="#">Login</a>
+						<a href="#" class="cyan-btn">Sign Up</a>
+					</div>
+				</nav>
+			</header>
+
+			<div class="hero">
+				<div class="hero__text">
+					<h1>More than just shorter links</h1>
+					<p>
+						Build your brand’s recognition and get detailed insights on how your
+						links are performing.
+					</p>
+					<a href="#" class="cyan-btn">Get Started</a>
+				</div>
+
+				<picture class="hero__image">
+					<img
+						src="images/illustration-working.svg"
+						alt="Illustration of a person working"
+					/>
+				</picture>
+			</div>
+		</main>
+		<div class="short">
+			<div class="short__area">
+				<div class="inputWrapper">
+					<input type="text" placeholder="Shorten a link here..." id="link" />
+					<p class="errorMsg">Error</p>
+				</div>
+
+				<button class="cyan-btn shortBtn">Shorten It!</button>
+			</div>
+
+			<div class="short__text">
+				<h2>Advanced Statistics</h2>
+				<p>
+					Track how your links are performing across the web with our advanced
+					statistics dashboard.
+				</p>
+			</div>
+
+			<div class="short__stats">
+				<div class="short__stats-container container-1">
+					<picture>
+						<img src="images/icon-brand-recognition.svg" alt="" />
+					</picture>
+					<h3>Brand Recognition</h3>
+					<p>
+						Boost your brand recognition with each click. Generic links don’t
+						mean a thing. Branded links help instil confidence in your content.
+					</p>
+				</div>
+				<div class="short__stats-container container-2">
+					<picture>
+						<img src="images/icon-detailed-records.svg" alt="" />
+					</picture>
+					<h3>Detailed Records</h3>
+					<p>
+						Gain insights into who is clicking your links. Knowing when and
+						where people engage with your content helps inform better decisions.
+					</p>
+				</div>
+				<div class="short__stats-container container-3">
+					<picture>
+						<img src="images/icon-fully-customizable.svg" alt="" />
+					</picture>
+					<h3>Fully Customizable</h3>
+					<p>
+						Improve brand awareness and content discoverability through
+						customizable links, supercharging audience engagement.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="page__boost">
+			<h4>Boost your links today</h4>
+			<a href="#" class="cyan-btn">Get Started</a>
+		</div>
+
+		<footer class="page__footer">
+			<picture>
+				<img src="images/logo.svg" alt="" class="footer__logo" />
+			</picture>
+
+			<nav class="features">
+				<p>Features</p>
+
+				<ul>
+					<li><a href="#">Link Shortening</a></li>
+					<li><a href="#">Branded Links</a></li>
+					<li><a href="#">Analytics</a></li>
+				</ul>
+			</nav>
+			<nav class="resources">
+				<p>Resources</p>
+
+				<ul>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">Developers</a></li>
+					<li><a href="#">Support</a></li>
+				</ul>
+			</nav>
+			<nav class="company">
+				<p>Company</p>
+
+				<ul>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Our Team</a></li>
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+			<nav class="social">
+				<p>Social</p>
+
+				<ul>
+					<li>
+						<a href="#"><img src="images/icon-facebook.svg" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/icon-twitter.svg" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/icon-pinterest.svg" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/icon-instagram.svg" alt="" /></a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
+		<div class="attribution">
+			<input type="checkbox" id="att" />
+
+			<div class="att-container">
+				Challenge by
+				<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+					>Frontend Mentor</a
+				>. Coded by
+				<a href="https://www.frontendmentor.io/profile/KTrick01" target="_blank"
+					>Eduardo Fleitas</a
+				>.
+			</div>
+			<label class="attrbtn" for="att"
+				><i class="fa-solid fa-angles-right"></i
+			></label>
+		</div>
+	</body>
+</html>
