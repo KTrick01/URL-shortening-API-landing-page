@@ -13,7 +13,6 @@ btn.addEventListener('click', () => {
 	fetch(`https://api.shrtco.de/v2/shorten?url=${link}`)
 		.then((response) => response.json())
 		.then(function (json) {
-			console.log(json);
 
 			if (!link.length) {
 				input.classList.add('error');
